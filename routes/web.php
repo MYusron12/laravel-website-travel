@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\DetailController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,11 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/detail', [DetailController::class, 'index'])->name('detail');
 
 
-Route::get('/admin', function () {
-    return view('layouts.admin');
-});
+Route::prefix('admin')
+    ->namespace('Admin')
+    ->group(function () {
+        route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    });
