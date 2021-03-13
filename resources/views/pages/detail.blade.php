@@ -8,7 +8,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col p-0 pl-3 pl-lg-0"">
-                <nav aria-label=" breadcrumb">
+                    <nav aria-label=" breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item" aria-current="page">
                                 Paket Travel
@@ -117,7 +117,7 @@
                             </table>
                         </div>
                         <div class="join-container">
-                            <a href="checkout.html" class="btn btn-block btn-join-now mt-3 py-2">Join Now</a>
+                            <a href="{{ route('checkout') }}" class="btn btn-block btn-join-now mt-3 py-2">Join Now</a>
                         </div>
                     </div>
                 </div>
